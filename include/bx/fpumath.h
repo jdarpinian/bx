@@ -386,16 +386,6 @@ namespace bx
 		_result[14] = -(_result[2]*_translation[0] + _result[6]*_translation[1] + _result[10]*_translation[2]);
 	}
 
-	inline void mtxQuatTranslationHMD(float* __restrict _result, const float* __restrict _quat, const float* __restrict _translation)
-	{
-		float quat[4];
-		quat[0] = -_quat[0];
-		quat[1] = -_quat[1];
-		quat[2] =  _quat[2];
-		quat[3] =  _quat[3];
-		mtxQuatTranslation(_result, quat, _translation);
-	}
-
 	inline void mtxLookAt(float* __restrict _result, const float* __restrict _eye, const float* __restrict _at, const float* __restrict _up = NULL)
 	{
 		float tmp[4];
